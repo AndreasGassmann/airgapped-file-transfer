@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "esnext",
         "module": "commonjs",
-        "outDir": "./dist",
+        "outDir": "./docs/js",
         "declaration": true,
         "declarationDir": "./types",
         "rootDir": "./src",
