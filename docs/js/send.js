@@ -1,7 +1,9 @@
+let pako;
 let qrcode;
 let interval;
 let fileReadData = new Uint8Array([100]);
 let encoder;
+console.log(window);
 // https://www.html5rocks.com/en/tutorials/file/dndfiles//
 const setupSlider = (sliderElName, sliderValueName) => {
     let slider = document.getElementById(sliderElName);
@@ -148,7 +150,7 @@ function handleFileSelect(evt) {
     for (var i = 0, f; f = files[i]; i++) {
         f.arrayBuffer().then(r => {
             var uint8View = new Uint8Array(r);
-            fileReadData = uint8View;
+            fileReadData = window.pako.deflate(uint8View, { level: 9 });
             startEncodingData();
             console.log(uint8View);
         });

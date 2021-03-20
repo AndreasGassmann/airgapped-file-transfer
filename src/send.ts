@@ -2,6 +2,7 @@ declare let QRCode
 declare let bc
 declare let QrScanner
 
+let pako
 let qrcode
 let interval
 
@@ -183,7 +184,7 @@ function handleFileSelect(evt) {
     for (var i = 0, f; f = files[i]; i++) {
         f.arrayBuffer().then(r => {
             var uint8View = new Uint8Array(r);
-            fileReadData = uint8View
+            fileReadData = (window as any).pako.deflate(uint8View, { level: 9 })
             startEncodingData()
             console.log(uint8View)
         })

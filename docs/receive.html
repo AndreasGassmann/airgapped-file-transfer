@@ -1,26 +1,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <title>Airgapped File Transfer</title>
 
-    <script src="libs/bc.min.js"></script>
-    <script src="libs/qrcode.js"></script>
-    <script src="libs/qr-scanner.js"></script>
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <title>Airgapped File Transfer</title>
 
-  <body>
-    Scan a BC-UR QR:
-    <br />
-    <div id="progress"></div>
-    <br />
-    <div id="result"></div>
-    <br />
+  <script src="libs/bc.min.js"></script>
+  <script src="libs/pako.min.js"></script>
+  <script src="libs/qrcode.js"></script>
+  <script src="libs/qr-scanner.js"></script>
+</head>
 
-    <video id="video"></video>
+<body>
+  Scan a BC-UR QR:
+  <br />
+  <div id="progress"></div>
+  <br />
+  <div id="result"></div>
+  <br />
 
-    <script src="js/receive.js"></script>
-  </body>
+  <video id="video"></video>
+
+  <script src="js/receive.js"></script>
+</body>
+
 </html>

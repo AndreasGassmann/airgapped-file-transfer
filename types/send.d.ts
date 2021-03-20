@@ -1,6 +1,7 @@
 declare let QRCode: any;
 declare let bc: any;
 declare let QrScanner: any;
+declare let pako: any;
 declare let qrcode: any;
 declare let interval: any;
 declare let fileReadData: Uint8Array;

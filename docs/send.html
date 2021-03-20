@@ -1,44 +1,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <title>Airgapped File Transfer</title>
 
-    <script src="libs/bc.min.js"></script>
-    <script src="libs/qrcode.js"></script>
-    <script src="libs/qr-scanner.js"></script>
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <title>Airgapped File Transfer</title>
 
-  <body>
-    <br />
-    <br />
-    <div style="margin: 20px" id="qrcode"></div>
-    <br />
-    <br />
+  <script src="libs/bc.min.js"></script>
+  <script src="libs/pako.min.js"></script>
+  <script src="libs/qrcode.js"></script>
+  <script src="libs/qr-scanner.js"></script>
+</head>
 
-      <textarea id="data"></textarea>
+<body>
+  <br />
+  <br />
+  <div style="margin: 20px" id="qrcode"></div>
+  <br />
+  <br />
 
-      <div class="slidecontainer">
-          Speed
-        <input type="range" min="1" max="1000" value="100" class="slider" id="speed">
-        <span id="speed-value"></span>
-      </div>
-      <div class="slidecontainer">
-          Size
-        <input type="range" min="10" max="1000" value="60" class="slider" id="size">
-        <span id="size-value"></span>
-      </div>
+  <textarea id="data"></textarea>
 
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
+  <div class="slidecontainer">
+    Speed
+    <input type="range" min="1" max="1000" value="100" class="slider" id="speed">
+    <span id="speed-value"></span>
+  </div>
+  <div class="slidecontainer">
+    Size
+    <input type="range" min="10" max="1000" value="60" class="slider" id="size">
+    <span id="size-value"></span>
+  </div>
 
-      <div id="drop_zone">Drop files here</div>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
 
-        <input type="file" id="files" name="files[]" multiple />
-        <output id="list"></output>
+  <div id="drop_zone">Drop files here</div>
 
-    <script src="js/send.js"></script>
-  </body>
+  <input type="file" id="files" name="files[]" multiple />
+  <output id="list"></output>
+
+  <script src="js/send.js"></script>
+</body>
+
 </html>

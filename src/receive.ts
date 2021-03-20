@@ -57,12 +57,13 @@ downloadURL = function (data, fileName) {
         if (decoder.isComplete()) {
             if (decoder.isSuccess()) {
                 const res = decoder.resultUR().decodeCBOR()
-                console.log('success', res)
+                const inflated = (window as any).pako.inflate(res)
+                console.log('success', inflated)
                 try {
-                    console.log('INTERPRETED', typedArrayToUnicodeString(new Uint8Array(Object.values(res))))
-                    document.getElementById('result').innerHTML = typedArrayToUnicodeString(new Uint8Array(Object.values(res)))
+                    console.log('INTERPRETED', typedArrayToUnicodeString(new Uint8Array(Object.values(inflated))))
+                    document.getElementById('result').innerHTML = typedArrayToUnicodeString(new Uint8Array(Object.values(inflated)))
                 } catch (e) {
-                    downloadBlob(new Uint8Array(Object.values(res)), 'air-gapped-file.jpg', 'application/octet-stream');
+                    downloadBlob(new Uint8Array(Object.values(inflated)), 'air-gapped-file.jpg', 'application/octet-stream');
                 }
                 document.getElementById('video').remove()
                 qrScanner.stop()
